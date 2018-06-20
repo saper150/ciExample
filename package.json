@@ -2,5 +2,24 @@
   "name": "conf-app",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon",
+    "build": "tsc",
+    "test": "jest",
+    "lint": "tslint --project tsconfig.json",
+    "lint:fix": "tslint --project tsconfig.json --fix"
+  },
+  "devDependencies": {
+    "@types/supertest": "^2.0.4",
+    "@types/jest": "^23.1.1",
+    "@types/node": "^10.3.4",
+    "jest": "^23.1.0",
+    "nodemon": "^1.17.5",
+    "supertest": "^3.1.0",
+    "ts-jest": "^22.4.6",
+    "ts-node": "^6.1.1",
+    "tslint": "^5.10.0",
+    "typescript": "^2.9.2"
+  }
 }
