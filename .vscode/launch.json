@@ -5,14 +5,6 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug Jest Tests",
-            "type": "node",
-            "request": "launch",
-            "preLaunchTask": "npm: build",
-            "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
-            "sourceMaps": true
-        },
-        {
             "type": "node",
             "request": "launch",
             "name": "debug program",
@@ -21,24 +13,6 @@
             "outFiles": [
                 "${workspaceFolder}/dist/**/*.js"
             ]
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Jest Tests",
-            "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
-            "args": [
-                "--config",
-                "package.json",
-                "--runInBand"
-            ],
-            "runtimeArgs": [
-                "--nolazy"
-            ],
-            "console": "internalConsole",
-            "env": {
-                "NODE_ENV": "test"
-            }
         }
     ]
 }

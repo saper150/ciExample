@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from "routing-controllers"
+import { BadRequestError, Body, Controller, Delete, Get, Param, Post, Put } from "routing-controllers"
 import { User } from "../entity/user"
 import { UserService } from "../services/userService"
 
@@ -9,6 +9,9 @@ export class UserController {
 
     @Post('/')
     addUser(@Body() user: User) {
+        if (!this.isEmailValid(user.email)) {
+            return new BadRequestError('email not valid')
+        }
         return this.userService.addUser(user)
     }
 
@@ -32,4 +35,7 @@ export class UserController {
         return this.userService.updateUser(id, user)
     }
 
+    private isEmailValid(email: string): boolean {
+        return !!(/[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm).exec(email)
+    }
 }
