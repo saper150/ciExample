@@ -16,7 +16,6 @@ rules:
     no-return-await: true
     no-sparse-arrays: true
     no-string-literal: true
-    no-submodule-imports: true
     no-switch-case-fall-through: true
     no-this-assignment: true
     no-unused-variable: true
@@ -43,13 +42,3 @@ rules:
         - true
         - "spaces"
         - 4
-
-    no-console:
-        severity: warning
-        options:
-            - debug
-            - info
-            - log
-            - time
-            - timeEnd
-            - trace

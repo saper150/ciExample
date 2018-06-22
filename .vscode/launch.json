@@ -8,19 +8,37 @@
             "name": "Debug Jest Tests",
             "type": "node",
             "request": "launch",
+            "preLaunchTask": "npm: build",
             "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen"
+            "sourceMaps": true
         },
         {
             "type": "node",
             "request": "launch",
             "name": "debug program",
-            "program": "${workspaceFolder}\\dist\\index.js",
-            "preLaunchTask": "tsc: build - tsconfig.json",
+            "program": "${workspaceFolder}/dist/src/index.js",
+            "preLaunchTask": "npm: build",
             "outFiles": [
                 "${workspaceFolder}/dist/**/*.js"
             ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Jest Tests",
+            "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
+            "args": [
+                "--config",
+                "package.json",
+                "--runInBand"
+            ],
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "console": "internalConsole",
+            "env": {
+                "NODE_ENV": "test"
+            }
         }
     ]
 }

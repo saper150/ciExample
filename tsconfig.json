@@ -4,9 +4,12 @@
         "module": "commonjs",
         "outDir": "dist",
         "sourceMap": true,
-        "baseUrl": "."
+        "baseUrl": ".",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
     },
     "include": [
-        "**/*.ts"
+        "**/*.ts",
+        "**/*.js"
     ]
 }

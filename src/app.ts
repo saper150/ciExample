@@ -1,6 +1,18 @@
-import * as http from "http"
+import "reflect-metadata"
+import { createKoaServer, useContainer as routingUserContainer } from "routing-controllers"
+import { Container } from "typedi"
+import { createConnection, useContainer as typeormUseContainer } from "typeorm"
 
+import dbConfig from "../ormconfig"
 
-export function app(req: http.IncomingMessage, res: http.ServerResponse) {
-    res.end('hello')
-}
+routingUserContainer(Container)
+typeormUseContainer(Container)
+
+export default createConnection(<any>dbConfig).then(() =>
+    createKoaServer({
+        controllers: [
+            `${__dirname}/controllers/*.js`,
+            `${__dirname}/controllers/*.ts`
+        ]
+    })
+)

@@ -7,13 +7,18 @@
     "dev": "nodemon",
     "build": "tsc",
     "test": "jest",
+    "ts-node": "ts-node",
     "lint": "tslint --project tsconfig.json",
-    "lint:fix": "tslint --project tsconfig.json --fix"
+    "lint:fix": "tslint --project tsconfig.json --fix",
+    "seed": "ts-node src/seed/seed.ts"
   },
   "devDependencies": {
-    "@types/supertest": "^2.0.4",
     "@types/jest": "^23.1.1",
+    "@types/koa": "^2.0.46",
+    "@types/koa-bodyparser": "^5.0.0",
+    "@types/koa-router": "^7.0.29",
     "@types/node": "^10.3.4",
+    "@types/supertest": "^2.0.4",
     "jest": "^23.1.0",
     "nodemon": "^1.17.5",
     "supertest": "^3.1.0",
@@ -21,5 +26,16 @@
     "ts-node": "^6.1.1",
     "tslint": "^5.10.0",
     "typescript": "^2.9.2"
+  },
+  "dependencies": {
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "pg": "^7.4.3",
+    "reflect-metadata": "^0.1.12",
+    "routing-controllers": "^0.7.7",
+    "typedi": "^0.8.0",
+    "typeorm": "^0.2.7",
+    "typeorm-typedi-extensions": "^0.2.1"
   }
 }

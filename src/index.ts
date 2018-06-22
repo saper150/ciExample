@@ -1,6 +1,6 @@
-import * as http from "http"
+import appPromise from "./app"
 
-http.createServer((req, res) => {
-    res.end('helloo')
-
-}).listen(8080)
+appPromise.then(x => {
+    x.listen(3000)
+    console.log('listening')
+})
