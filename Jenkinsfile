@@ -3,7 +3,7 @@ pipeline {
     environment {
         POSTGRES_PASSWORD = '123'
         POSTGRES_USER = 'postgres'
-        POSTGRES_DB = 'apiaTest'
+        POSTGRES_DB = 'postgres'
         POSTGRES_HOST = 'postgres'
     }
   tools {nodejs "node"}
