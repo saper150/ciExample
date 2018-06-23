@@ -4,7 +4,7 @@ pipeline {
         POSTGRES_PASSWORD = '123'
         POSTGRES_USER = 'postgres'
         POSTGRES_DB = 'apiaTest'
-        POSTGRES_HOST = 'postgress'
+        POSTGRES_HOST = 'postgres'
     }
   tools {nodejs "node"}
   stages {
