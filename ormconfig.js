@@ -2,11 +2,11 @@ const path = require('path')
 
 module.exports = {
     "type": "postgres",
-    "host": process.env.DB_HOST || "localhost",
+    "host": process.env.POSTGRES_HOST || "localhost",
     "port": process.env.DB_PORT || 5432,
-    "username": process.env.DB_USERNAME || "postgres",
-    "password": process.env.DB_PASSWORD || "123",
-    "database": process.env.DB_DATABASE || "app",
+    "username": process.env.POSTGRES_USER || "postgres",
+    "password": process.env.POSTGRES_PASSWORD || "123",
+    "database": process.env.POSTGRES_DB || "app",
     "synchronize": true,
     "logging": false,
     "entities": [

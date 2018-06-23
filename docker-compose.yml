@@ -2,6 +2,10 @@ version: "3"
 services:
   postgress:
     image: postgres:10.4-alpine
+    environment:
+        - POSTGRES_PASSWORD=123
+        - POSTGRES_USER=postgress
+        - POSTGRES_DB=apiaTest
     networks: 
       - lognet
   jenkins:
