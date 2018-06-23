@@ -2,7 +2,7 @@ pipeline {
   agent any
     environment {
         POSTGRES_PASSWORD = '123'
-        POSTGRES_USER = 'postgress'
+        POSTGRES_USER = 'postgres'
         POSTGRES_DB = 'apiaTest'
         POSTGRES_HOST = 'postgress'
     }
