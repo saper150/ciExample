@@ -1,25 +1,22 @@
 pipeline {
   agent any
+ 
+  tools {nodejs "node10"}
+ 
   stages {
-    stage('install dependencies') {
+    stage("install dependencies") {
       steps {
-        nodejs(nodeJSInstallationName: 'node10'){
-          sh '''npm install'''
-        }
+        sh 'npm install'
       }
     }
-    stage('test') {
+    stage("test") {
       steps {
-        nodejs(nodeJSInstallationName: 'node10'){
-          sh '''npm run test'''
-        }
+        sh 'npm test'
       }
     }
-    stage('lint') {
+     stage("lint") {
       steps {
-        nodejs(nodeJSInstallationName: 'node10'){
-          sh '''npm run lint'''
-        }
+        sh 'npm lint'
       }
     }
   }
