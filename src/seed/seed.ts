@@ -9,10 +9,7 @@ import seedCompany from "./seedCompany"
 import seedUsers from "./seedUsers"
 
 const exec = promisify(execCallback)
-console.log('sdf')
-console.log(`npm run ts-node ${path.join(__dirname, '..', '..', 'node_modules', 'typeorm', 'cli.js')} schema:drop`)
-exec(`npm run ts-node ${path.join(__dirname, '..', '..', 'node_modules', 'typeorm', 'cli.js')} schema:drop`)
-    .then(() => exec(`npm run ts-node node_modules\\typeorm\\cli.js schema:sync`))
+exec(`npm run resyncSchema`)
     .then(() => createConnection(<any>dbConfig))
     .then(seed)
     .then(() => {
