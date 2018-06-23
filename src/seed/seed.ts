@@ -22,4 +22,5 @@ exec(`npm run ts-node node_modules\\typeorm\\cli.js schema:drop`)
 async function seed(connecion: Connection) {
     await seedCompany(connecion)
     await seedUsers(connecion)
+    process.exit()
 }

@@ -13,6 +13,11 @@ pipeline {
         sh 'npm install'
       }
     }
+    stage("seed database") {
+      steps {
+        sh 'npm run seed'
+      }
+    }
     stage("test") {
       steps {
         sh 'npm test'
