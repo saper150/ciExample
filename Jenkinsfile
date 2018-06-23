@@ -10,7 +10,7 @@ pipeline {
   stages {
     stage('install dependencies') {
       steps {
-        sh 'npm install'
+        sh 'yarn install'
       }
     }
     stage("seed database") {
