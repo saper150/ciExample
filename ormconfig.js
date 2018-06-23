@@ -10,15 +10,12 @@ module.exports = {
     "synchronize": true,
     "logging": false,
     "entities": [
-        path.join(__dirname, 'src/entity/**/*.ts'),
-        path.join(__dirname, 'src/entity/**/*.js')
+        path.join(__dirname, 'src/entity/**/!(*.spec.js|*.spec.ts)'),
     ],
     "migrations": [
-        path.join(__dirname, 'src/entity/**/*.js'),
-        path.join(__dirname, 'src/entity/**/*.ts')
+        path.join(__dirname, 'src/entity/**/!(*.spec.js|*.spec.ts)'),
     ],
     "subscribers": [
-        path.join(__dirname, 'src/subscriber/**/*.ts'),
-        path.join(__dirname, 'src/subscriber/**/*.js')
+        path.join(__dirname, 'src/subscriber/**/!(*.spec.js|*.spec.ts)'),
     ]
 }

@@ -9,6 +9,6 @@ export class User {
     @Column()
     email: string
 
-    @ManyToOne(type => Companny, company => company.users, { nullable: false })
+    @ManyToOne(type => Companny, company => company.users, { nullable: true })
     companny: Companny
 }

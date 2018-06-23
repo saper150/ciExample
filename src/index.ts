@@ -1,6 +1,6 @@
-import appPromise from "./app"
+import appPromise from "../src/app"
 
-appPromise.then(x => {
-    x.listen(3000)
+appPromise.then(({ app }) => {
+    app.listen(process.env.PORT || 3000)
     console.log('listening')
 })

@@ -8,11 +8,12 @@ import dbConfig from "../ormconfig"
 routingUserContainer(Container)
 typeormUseContainer(Container)
 
-export default createConnection(<any>dbConfig).then(() =>
-    createKoaServer({
+export default createConnection(<any>dbConfig).then(connection => ({
+    connection,
+    app: createKoaServer({
         controllers: [
-            `${__dirname}/controllers/*.js`,
-            `${__dirname}/controllers/*.ts`
+            `${__dirname}/controllers/!(*.spec.js|*.spec.ts)`,
         ]
     })
+})
 )

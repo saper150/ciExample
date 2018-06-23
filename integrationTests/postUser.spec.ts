@@ -5,17 +5,21 @@ describe('GET /user', () => {
 
     let appCallback
     beforeAll(() => {
-        return appPromise.then(({ connection, app }) => {
+        return appPromise.then(({ app }) => {
             appCallback = app.callback()
         })
     })
 
     it('get', (done) => {
         request(appCallback)
-            .get('/users')
+            .post('/users')
+            .send({
+                email: 'qwe@qwe.com',
+                "companny": { "id": 1 }
+            })
             .expect(200, done)
             .expect(({ body }) => {
-                expect(Array.isArray(body)).toEqual(true)
+                done()
             })
     })
 })
