@@ -3,7 +3,7 @@ import { createKoaServer, useContainer as routingUserContainer } from "routing-c
 import { Container } from "typedi"
 import { createConnection, useContainer as typeormUseContainer } from "typeorm"
 
-import dbConfig from "../ormconfig"
+import * as dbConfig from "../ormconfig"
 
 routingUserContainer(Container)
 typeormUseContainer(Container)

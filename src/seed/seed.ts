@@ -2,7 +2,7 @@
 import { exec as execCallback } from "child_process"
 import { Connection, createConnection } from "typeorm"
 import { promisify } from "util"
-import dbConfig from "../../ormconfig"
+import * as dbConfig from "../../ormconfig"
 import seedCompany from "./seedCompany"
 import seedUsers from "./seedUsers"
 
