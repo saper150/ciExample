@@ -2,11 +2,10 @@
 import { exec as execCallback } from "child_process"
 import { Connection, createConnection } from "typeorm"
 import { promisify } from "util"
-
-import * as path from "path"
 import dbConfig from "../../ormconfig"
 import seedCompany from "./seedCompany"
 import seedUsers from "./seedUsers"
+
 
 const exec = promisify(execCallback)
 exec(`npm run resyncSchema`)

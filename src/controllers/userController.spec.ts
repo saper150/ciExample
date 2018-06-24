@@ -24,7 +24,7 @@ describe('userControllerTest', () => {
 
 
     it('addUser should add user if email is valid', () => {
-        const result = controller.addUser(<any>{ email: 'abc@abc.com' })
+        controller.addUser(<any>{ email: 'abc@abc.com' })
         expect(userService.addUser).toBeCalledWith({ email: 'abc@abc.com' })
     })
 
