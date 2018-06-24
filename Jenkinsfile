@@ -1,32 +1,38 @@
 pipeline {
   agent any
-    environment {
-        POSTGRES_PASSWORD = '123'
-        POSTGRES_USER = 'postgres'
-        POSTGRES_DB = 'postgres'
-        POSTGRES_HOST = 'postgres'
-    }
-  tools {nodejs "node"}
   stages {
     stage('install dependencies') {
       steps {
         sh 'yarn install'
       }
     }
-    stage("seed database") {
-      steps {
-        sh 'npm run seed'
+    stage('seed database') {
+      parallel {
+        stage('seed database') {
+          steps {
+            sh 'npm run seed'
+          }
+        }
+        stage('lint') {
+          steps {
+            sh 'npm run lint'
+          }
+        }
       }
     }
-    stage("test") {
+    stage('test') {
       steps {
         sh 'npm test'
       }
     }
-     stage("lint") {
-      steps {
-        sh 'npm run lint'
-      }
-    }
+  }
+  tools {
+    nodejs 'node'
+  }
+  environment {
+    POSTGRES_PASSWORD = '123'
+    POSTGRES_USER = 'postgres'
+    POSTGRES_DB = 'postgres'
+    POSTGRES_HOST = 'postgres'
   }
 }
