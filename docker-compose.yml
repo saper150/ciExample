@@ -1,7 +1,9 @@
-version: "3"
+version: "2"
 services:
   postgres:
-    image: postgres:10.4-alpine
+    build:
+      dockerfile: Dockerfile
+      context: './'
     environment:
         - POSTGRES_PASSWORD=123
         - POSTGRES_USER=postgres
@@ -15,7 +17,7 @@ services:
       - 8081:8081
       - 8082:8082
     volumes:
-      - jenkins_home:/var/jenkins_home
+      - ./jenkinsFiles:/var/jenkins_home
     networks: 
       - lognet
 networks:
