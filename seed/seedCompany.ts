@@ -1,5 +1,5 @@
 import { Connection } from "typeorm"
-import { Companny } from "../entity/company"
+import { Companny } from "../src/entity/company"
 
 export default function (connection: Connection) {
     return connection.getRepository(Companny).save([{

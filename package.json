@@ -10,7 +10,7 @@
     "test": "jest --forceExit",
     "lint": "tslint --project tsconfig.json",
     "lint:fix": "tslint --project tsconfig.json --fix",
-    "seed": "ts-node src/seed/seed.ts",
+    "seed": "ts-node seed/seed.ts",
     "resyncSchema": "ts-node node_modules/typeorm/cli.js schema:drop && ts-node node_modules/typeorm/cli.js schema:sync"
   },
   "devDependencies": {

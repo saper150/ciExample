@@ -1,6 +1,7 @@
+
 import { Connection } from "typeorm"
-import { Companny } from "../entity/company"
-import { User } from "../entity/user"
+import { Companny } from "../src/entity/company"
+import { User } from "../src/entity/user"
 
 export default async function (connection: Connection) {
     return connection.getRepository(User).save([

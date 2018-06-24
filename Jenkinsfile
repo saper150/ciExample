@@ -30,7 +30,7 @@ pipeline {
     nodejs 'node'
   }
   environment {
-    POSTGRES_PASSWORD = '123'
+    POSTGRES_PASSWORD = 'jenkins'
     POSTGRES_USER = 'postgres'
     POSTGRES_DB = 'postgres'
     POSTGRES_HOST = 'postgres'
